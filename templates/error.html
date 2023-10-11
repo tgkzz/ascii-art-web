@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 40px;
+        }
+    </style>
+    <title>{{.Text_err}}</title>
+  </head>
+  <body>
+    <div class="container">
+        <h1 class="text-center my-4 text-danger">Error {{.Code_err}}</h1>
+        <div class="alert alert-danger" role="alert">
+            <p class="text">Oppss! {{.Text_err}}</p>
+        </div>
+        <div class="text-center">
+            <a href="javascript:history.back()" class="btn btn-primary">Go back</a>
+        </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ascii-art-web</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            padding: 40px;
+            background-color: palevioletred;
+        }
+
+        .title-font {
+            font-family: 'Times New Roman';
+            color: pink;
+        }
+
+        .input_block {
+            margin-bottom: 20px;
+        }
+
+        #optionsMenu {
+            margin-bottom: 20px;
+        }
+
+        #outputText {
+            padding: 20px;
+            margin-top: 20px;
+            background-color: azure;
+        }
+
+        #res {
+            white-space: pre;
+            overflow-x: auto;
+            min-height: 150px;
+        }
+
+        .border-add {
+            border-radius: 15px;
+            border: 4px solid rgb(255, 0, 0);
+        }
+
+        .btn-color {
+            background-color: palevioletred;
+            color: black;
+        }
+
+        .container {
+            max-width: 95%;
+        }
+
+        #submitButton {
+            width: 200px;
+            height: 50px;
+            display: block;
+            margin: 30px auto;
+            font-size: 20px;
+        }
+
+        @media (max-width: 767.98px) {
+            body {
+                padding: 20px;
+            }
+
+            #submitButton {
+                width: 100%;
+            }
+        }
+
+        @media (min-width: 768px) and (max-width: 991.98px) {
+            #submitButton {
+                width: 70%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1 class="text-center my-12 title-fo    white-space: pre-wrap;
+        word-break: break-all;
+        overflow-x: auto;nt"> <i> Ascii-art-web </i> </h1>
+        <form action="/ascii-art" method="POST">
+            <div class="input_block">
+                <h4> <i> Input: </i> </h4>
+                <textarea class="form-control border-add" id="input" name="text" cols="50" maxlength="500"
+                    rows="8">{{if .Text}}{{.Text}}{{else}}{{end}}</textarea>
+            </div>
+            <div id="optionsMenu" class="mb-3">
+                <label for="fs" class=>
+                    <h4> <i> Styles: </i> </h4>
+                </label>
+                <select class="form-control border-add" name="fs" id="fs">
+                    <option value="standard">Standard</option>
+                    <option value="shadow">Shadow</option>
+                    <option value="thinkertoy">Thinkertoy</option>
+                </select>
+            </div>
+            <h4> <i> Output: </i> </h4>
+            <div id="outputText" class="border-add">
+
+                <pre id="res" name="res">{{.Ascii_art}}</pre>
+            </div>
+            <button id="submitButton" class="btn btn-primary border-add btn-color">Submit</button>
+        </form>
+        <form action="/download" method="POST">
+            <input type="hidden" name="res" id="hiddenAsciiArtInput">
+            <button type="submit" id="downloadButton">Download Ascii-art</button>
+        </form>
+    </div>
+    <script>
+        document.getElementById('downloadButton').addEventListener('click', function() {
+            const asciiArtContent = document.getElementById('res').textContent;
+            document.getElementById('hiddenAsciiArtInput').value = asciiArtContent;
+        });
+    </script>
+    
+    
+</body>
+
+</html>
