@@ -11,7 +11,7 @@ start server by cloning project, then run this command
 go run .
 ```
 
-after that, feel free to try different texts and banners
+after that, feel free to try different texts, banners, and download it if you like them
 
 
 ## Run using docker and makefile
@@ -24,6 +24,14 @@ make run
 ```
 
 project will be run using IMAGE_NAME "ascii-art-web" and CONTAINER_NAME "asd" by default. To change them, check out makefile
+
+## Used technology
+
+- [HTML](https://www.w3schools.com/html/) (Front-end)
+- [CSS](https://www.w3schools.com/css/) (Stylize)
+- [JavaScript](https://www.w3schools.com/js/) (Download of Ascii-art)
+- [Go](https://go.dev/) (Server part)
+- [Docker](https://www.docker.com/) (containerize)
 
 ## Modniy style
 
